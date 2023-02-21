@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parmis</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <main class="main d-flex justify-content-center flex-column align-items-center">
+        <section class="content-card">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4 class="content-card-title mb-3">Welcome.</h4>
+                        <div class="form-container">
+                            <div class="error"></div>
+                            <form>
+                                <div class="form-group col-mb-8">
+                                    <label for="identifier" class="form-label">Unique Identifier</label>
+                                    <input type="text" placeholder="Enter your email address or hospital code"
+                                        class="form-control" id="unique_identifier" />
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" placeholder="Enter password" id="password"
+                                        class="form-control" />
+                                </div>
+                                <div class="d-flex justify-content-between mb-4 align-items-center">
+                                    <button class="btn btn-success px-4 btn-custom btn-md rounded-pill">
+                                        Login
+                                    </button>
+                                    <a href="#">Forgot Password</a>
+                                </div>
+                                <p class="fw-bold">
+                                    Don't have an account? <a href="#"> Sign up now</a>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="d-flex justify-content-end">
+                            <div class="side-image-frame">
+                                <div class="side-image-container">
+                                    <img class="side-image" src="./images/01.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-container">
+                <h4 class="text-white">Hospital Info</h4>
+                <ul class="footer-menu">
+                    <li><a class="text-white" href="#">Patient</a></li>
+                    <li><a class="text-white" href="#">Doctor</a></li>
+                    <li><a class="text-white" href="#">Pharmacist</a></li>
+                    <li><a class="text-white" href="#">Lab Scientist</a></li>
+                    <li><a class="text-white" href="#">Nurses</a></li>
+                </ul>
+            </div>
+        </footer>
+    </main>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/signUp.js"></script>
+</body>
+
+</html>
