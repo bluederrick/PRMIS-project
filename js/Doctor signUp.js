@@ -1,4 +1,6 @@
-const Password = document.querySelector('#password');
+// const { default: axios } = require("axios");
+
+const Password = document.querySelector('#doctorpassword');
 const Email = document.querySelector('#unique_identifier')
 const btn = document.querySelector('#Doctorsignup');
 const errorhandler = document.querySelector('.error');
@@ -19,28 +21,35 @@ btn.addEventListener('click', (e) => {
             errorhandler.innerHTML = errorMessage.error || this.failedMessage
         }, 3000)
     }
-    let data = ({
+    let data = {
         Email: Email.value,
         Password: Password.value
-    });
+    };
 
-    fetch('http://localhost:8000/signup', {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+})
 
-    }).then((res) => 
-        res.json()
-    ).then((data) => {
-        console.log("Success", data);
-    }).catch((err) => { console.log("Error", err) })
-});
+fetch("http://localhost:8000/signup", {
+
+    mode: 'no-cors',
+    method: 'POST',
+
+    headers: {
+
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+    },
+
+    body: JSON.stringify(data),
+    submit: console.log(JSON.stringify(data))
+}).then((data) => {
+    data.json();
+    // console.log("Success", data);
+}).catch((err) => { console.log(err) })
 
 
 
+/* comments*/
 
 // let data = {
 //     password: password.value,
