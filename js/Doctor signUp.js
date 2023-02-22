@@ -6,11 +6,14 @@ const btn = document.querySelector('#Doctorsignup');
 const errorhandler = document.querySelector('.error');
 
 
+
 let errorMessage;
 
 errorMessage = {
     error: "Plesae fill in the required fields"
 }
+
+
 
 btn.addEventListener('click', (e) => {
 
@@ -18,15 +21,17 @@ btn.addEventListener('click', (e) => {
     errorhandler.classList.add("error")
     if (Password < 0 && Password === "" && Email === "") {
         setTimeout(() => {
-            errorhandler.innerHTML = errorMessage.error || this.failedMessage
+            errorhandler.innerHTML = errorMessage.error
         }, 3000)
     }
-    let data = {
-        Email: Email.value,
-        Password: Password.value
-    };
+
 
 })
+let data = {
+    Email: Email.value,
+    Password: Password.value,
+};
+
 
 fetch("http://localhost:8000/signup", {
 
@@ -42,10 +47,11 @@ fetch("http://localhost:8000/signup", {
 
     body: JSON.stringify(data),
     submit: console.log(JSON.stringify(data))
-}).then((data) => {
-    data.json();
-    // console.log("Success", data);
-}).catch((err) => { console.log(err) })
+}).then(res => res.json())
+    .then((data) => {
+        data.json();
+        // console.log("Success", data);
+    }).catch((err) => { console.log(err) })
 
 
 
